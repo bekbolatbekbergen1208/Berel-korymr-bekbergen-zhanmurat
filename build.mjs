@@ -1,0 +1,1 @@
+import fs from 'node:fs';fs.mkdirSync('dist',{recursive:true});for(const f of ['index.html','styles.css','app.js','data.js','live.js'])fs.copyFileSync(f,'dist/'+f);fs.cpSync('public','dist/public',{recursive:true});console.log('Static site built in dist/');

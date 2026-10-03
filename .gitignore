@@ -1,0 +1,4 @@
+.runtime/
+.env
+firmware/berel_arheoscan/config.h
+dist/
