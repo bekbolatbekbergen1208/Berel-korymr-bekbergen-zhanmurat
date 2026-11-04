@@ -14,11 +14,11 @@ export const steps=[['Калибровка','Қалыпты топырақтың
 // Future integration boundary: return { signal, deviation, status } from an ESP32 API.
 export async function measureDemo(index,baseline=46){await new Promise(r=>setTimeout(r,1800));const signal=[74,48,63,77,45][index%5];const deviation=Math.abs(signal-baseline);return {signal,deviation,status:deviation>=20?'ANOMALY':deviation>=10?'RECHECK':'NORMAL'};}
 
-// Approximate site-level location from the published Berel archaeological monograph.
-// Individual mound coordinates are intentionally absent until verified surveying data is supplied.
-export const berelSite={lat:49.333333,lng:86.366667,zoom:13,source:'https://ipae.uran.ru/sites/default/files/publications/Kosintsev_PA/Косинцев_2014_5.pdf'};
-export const berelMounds=[
-  {id:'K-02',name:'№2 қорған',x:28,y:63,description:'Музейлендірілген қорған. Қорған үстіне қорғау құрылысы орнатылған.',source:'https://www.berelmuseum.kz/ru/infotsentr/smi-o-nas/439-muzeefikatsiya-nekropolya-berel-v-vko-prodolzhaetsya.html'},
-  {id:'K-10',name:'№10 қорған',x:52,y:44,description:'Археологиялық зерттеулерде №11 қорғанмен бір тізбекте сипатталған нысан.',source:'https://archaeology.kz/heritages/295-berel-qorymy'},
-  {id:'K-11',name:'№11 қорған',x:74,y:28,description:'1998 жылдан бастап зерттелген маңызды қорған. Қорғау құрылысы арқылы музейлендірілген.',source:'https://archaeology.kz/heritages/295-berel-qorymy'}
+// Initial overview only; no archaeological site coordinates are implied.
+export const researchRegion={lat:48,lng:67,zoom:5};
+// Fictional learning examples, without GPS coordinates.
+export const researchObjects=[
+  {id:'K-02',name:'Қорған',x:28,y:63,description:'Шартты оқу нысаны: жерлеу құрылысының айналасындағы электрлік ауытқуларды салыстыру. Нақты ескерткіш туралы дерек емес.'},
+  {id:'K-10',name:'Көне қоныс',x:52,y:44,description:'Шартты оқу нысаны: топырақ қабаттары мен құрылыс қалдықтары ықтимал ауытқуларды талқылауға арналған мысал.'},
+  {id:'K-11',name:'Көне қала орны',x:74,y:28,description:'Шартты оқу нысаны: зерттеу торын құру және өлшемдерді салыстыру мысалы. Құрылыс қалдықтарын растау үшін кәсіби зерттеу қажет.'}
 ];

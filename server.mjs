@@ -54,5 +54,5 @@ export function createApp({root=path.dirname(fileURLToPath(import.meta.url)),sto
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   const server=createApp();server.requestTimeout=10000;
-  server.listen(Number(process.env.PORT)||3000,'0.0.0.0',()=>{console.log(`Berel ArheoScan: http://localhost:${Number(process.env.PORT)||3000}`);console.log('ESP32 қосылымы: firmware/berel_arheoscan және README.md');});
+  server.listen(Number(process.env.PORT)||3000,'0.0.0.0',()=>{console.log(`ArheoScan: http://localhost:${Number(process.env.PORT)||3000}`);console.log('ESP32 қосылымы: firmware/berel_arheoscan және README.md');});
 }
